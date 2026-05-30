@@ -206,8 +206,8 @@ body::before {
 
 .divider {
   height: 1px;
-  background: var(--border);
-  margin: 12px 0 0;
+  margin: 10px 0 0;
+  background: linear-gradient(90deg, transparent, rgba(138, 109, 251, 0.28), rgba(255, 255, 255, 0.08), rgba(138, 109, 251, 0.28), transparent);
 }
 
 .link-full {
@@ -237,6 +237,15 @@ body::before {
 
 .portfolio-nav {
   display: block;
+  position: relative;
+}
+
+.portfolio-nav::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 18px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), rgba(138, 109, 251, 0.22), rgba(255, 255, 255, 0.06), transparent);
 }
 
 .feature-grid {
@@ -620,7 +629,118 @@ body::before {
   grid-template-columns: 1fr 1fr;
 }
 
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  gap: 6px;
+  padding: 8px 9px 10px;
+  background: var(--panel-alt);
+}
+
+.mosaic-tile {
+  min-height: 92px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: left;
+  padding: 12px 12px;
+  border-right: none;
+  border: 1px solid rgba(255, 255, 255, 0.045);
+  background: #24293a;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 8px 18px rgba(8, 10, 16, 0.12);
+}
+
+.mosaic-tile:hover {
+  transform: translateY(-2px);
+  background: #272d40;
+}
+
+.mosaic-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+  text-transform: lowercase;
+  color: #eef0fc;
+}
+
+.mosaic-copy {
+  font-size: 11px;
+  line-height: 1.45;
+  color: #9ba3c4;
+  max-width: 28ch;
+}
+
+.tile-about .mosaic-label,
+.tile-projects .mosaic-label {
+  font-size: 16px;
+}
+
+.tile-wide {
+  grid-column: span 4;
+  min-height: 168px;
+}
+
+.tile-medium {
+  grid-column: span 3;
+  min-height: 132px;
+}
+
+.tile-compact {
+  grid-column: span 2;
+  min-height: 94px;
+}
+
+.tile-left {
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.tile-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tile-center .mosaic-label,
+.tile-center i,
+.tile-center .svg-icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tile-center .mosaic-label {
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+
+.tile-compact {
+  background: #212636;
+  opacity: 0.95;
+}
+
+.tile-compact:hover {
+  opacity: 1;
+}
+
+.tile-about,
+.tile-projects,
+.tile-web3,
+.tile-events,
+.tile-social,
+.tile-contact {
+  gap: 6px;
+}
+
+.mosaic-grid > .tile-wide,
+.mosaic-grid > .tile-medium,
+.mosaic-grid > .tile-compact {
+  min-width: 0;
+}
+
 .grid-link {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -630,7 +750,7 @@ body::before {
   text-decoration: none;
   font-size: 13px;
   border-right: 1px solid var(--border);
-  transition: background 0.15s, color 0.15s;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .grid-link:last-child {
@@ -638,13 +758,16 @@ body::before {
 }
 
 .grid-link:hover {
-  background: #363d57;
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.04);
   color: #eef0fc;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .grid-link i {
   font-size: 17px;
   color: var(--muted);
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), color 0.18s ease;
 }
 
 .svg-icon {
@@ -656,6 +779,27 @@ body::before {
 
 .grid-link:hover .svg-icon {
   opacity: 1;
+}
+
+.grid-link:hover i {
+  transform: translateX(2px);
+  color: #d8dfff;
+}
+
+@media (max-width: 560px) {
+  .mosaic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tile-wide,
+  .tile-medium,
+  .tile-compact {
+    grid-column: span 2;
+  }
+
+  .portfolio-nav::before {
+    margin: 0 12px;
+  }
 }
 
 .section-label {
@@ -677,6 +821,23 @@ body::before {
 
   .content-grid {
     grid-template-columns: 1fr;
+  }
+
+  .mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tile-wide,
+  .tile-medium,
+  .tile-compact,
+  .tile-about,
+  .tile-projects,
+  .tile-web3,
+  .tile-events,
+  .tile-social,
+  .tile-contact {
+    grid-column: auto;
+    min-height: 84px;
   }
 
   .ladder-track::before {
