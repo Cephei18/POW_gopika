@@ -2,7 +2,7 @@
   const storageKey = 'pow-gopika-theme';
   const themeToggle = document.querySelector('[data-theme-toggle]');
   const body = document.body;
-  const preferredTheme = 'light';
+  const preferredTheme = 'dark';
 
   const renderToggle = (theme) => {
     if (!themeToggle) {

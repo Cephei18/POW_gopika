@@ -4,58 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>okgopika — Gopika Chauhan</title>
+  <meta name="description" content="okgopika — Gopika Chauhan. Web3 builder & AI systems engineer building weirdly intelligent things for the decentralized internet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <script defer src="./scripts/theme.js"></script>
+  <script defer src="./scripts/site.js"></script>
 </head>
 <body>
   <main class="portfolio-wrap">
     <section class="banner" aria-label="Profile banner">
       <img class="banner-image" src="./assets/banner_web3_gopika.png" alt="Web3 themed banner artwork" />
-
     </section>
 
     <section class="profile-section">
       <div class="username">okgopika<span class="cursor"></span></div>
       <div class="real-name">Gopika Chauhan</div>
-      <div class="title-line">Uniswap Hook Incubator · Dev3Pack Fellow · DevRel Uni Scholar · SheFi Season 14</div>
-      <div class="title-line">Blockchain · Agentic AI · DeFi</div>
-      <div class="tagline">Building weirdly intelligent things for the decentralized internet.</div>
-      <div class="status-note">currently exploring: uniswap v4 hooks · farcaster agents · coordination systems</div>
-      
+
+      <div class="hero-meta" aria-label="Live status">
+        <span class="hero-stat"><span class="status-dot"></span>building</span>
+        <span class="dot-sep">·</span>
+        <span class="hero-stat" data-clock>—</span>
+        <span class="dot-sep">·</span>
+        <span class="hero-stat">IIT Mandi, IN</span>
+        <span class="dot-sep">·</span>
+        <span class="hero-stat" data-greeting>online</span>
+      </div>
+
+      <div class="title-line">Uniswap Hook Incubator · Dev3Pack Fellow · DevRel Uni Scholar · SheFi S14</div>
+      <div class="title-line"><strong>Blockchain</strong> · <strong>Agentic AI</strong> · <strong>DeFi</strong></div>
+
+      <div class="tagline">building weirdly intelligent things for the decentralized internet</div>
+      <div class="status-note">currently in the weeds of: <span class="rotator" data-rotate>uniswap v4 hooks</span></div>
     </section>
 
     <div class="divider"></div>
 
     <nav class="portfolio-nav" aria-label="Portfolio links">
-      <div class="section-label">// links</div>
+      <div class="section-label">
+        <span>// links</span>
+        <span class="label-aside">pick a doorway</span>
+      </div>
 
       <div class="mosaic-grid">
         <a class="grid-link mosaic-tile tile-about tile-wide tile-left" href="./about.html" aria-label="About me">
+          <span class="mosaic-index">01</span>
           <i class="ti ti-user"></i>
           <span class="mosaic-label">about me</span>
+          <span class="mosaic-note">the long version — who's behind the node</span>
         </a>
 
-        <a class="grid-link mosaic-tile tile-social tile-compact tile-center" href="https://farcaster.xyz/okgopika" target="_blank" rel="noopener" aria-label="Farcaster">
+        <a class="grid-link mosaic-tile tile-social tile-tall tile-left" href="https://farcaster.xyz/okgopika" target="_blank" rel="noopener" aria-label="Farcaster">
           <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M18.24 3.6H5.76C4.24 3.6 3 4.84 3 6.36v11.28c0 1.52 1.24 2.76 2.76 2.76h12.48c1.52 0 2.76-1.24 2.76-2.76V6.36c0-1.52-1.24-2.76-2.76-2.76zM8.4 16.8H6V9.6h2.4v7.2zm5.4 0h-2.4V9.6h2.4v7.2zm3.6 0H15V9.6h2.4v7.2z" />
           </svg>
           <span class="mosaic-label">farcaster</span>
+          <span class="mosaic-note">@okgopika · home base</span>
         </a>
 
-        <a class="grid-link mosaic-tile tile-projects tile-wide tile-left" href="./projects.html" aria-label="My projects">
-          <i class="ti ti-briefcase"></i>
-          <span class="mosaic-label">my projects</span>
-        </a>
-
-        <a class="grid-link mosaic-tile tile-social tile-compact tile-center" href="https://x.com/okgopika" target="_blank" rel="noopener" aria-label="X / Twitter">
-          <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-          <span class="mosaic-label">x / twitter</span>
+        <a class="grid-link mosaic-tile tile-projects tile-medium tile-left" href="./projects.html" aria-label="My projects">
+          <span class="mosaic-index">02</span>
+          <i class="ti ti-terminal-2"></i>
+          <span class="mosaic-label">projects</span>
+          <span class="mosaic-note">things that actually shipped</span>
         </a>
 
         <a class="grid-link mosaic-tile tile-web3 tile-medium tile-left" href="./web3.html" aria-label="Web3 exposure">
+          <span class="mosaic-index">03</span>
           <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" />
             <line x1="12" y1="2" x2="12" y2="22" />
@@ -63,30 +80,44 @@
             <line x1="2" y1="16" x2="22" y2="16" />
           </svg>
           <span class="mosaic-label">web3 exposure</span>
+          <span class="mosaic-note">the climb, one cohort at a time</span>
         </a>
 
-        <a class="grid-link mosaic-tile tile-events tile-medium tile-left" href="./events.html" aria-label="Events and conferences">
+        <a class="grid-link mosaic-tile tile-events tile-compact tile-left" href="./events.html" aria-label="Events and conferences">
+          <span class="mosaic-index">04</span>
           <i class="ti ti-calendar-event"></i>
-          <span class="mosaic-label">events &amp; conf</span>
+          <span class="mosaic-label">events</span>
+          <span class="mosaic-note">irl + url</span>
         </a>
 
-        <a class="grid-link mosaic-tile tile-social tile-medium tile-left" href="https://github.com/Cephei18" target="_blank" rel="noopener" aria-label="GitHub">
+        <a class="grid-link mosaic-tile tile-social tile-compact tile-left" href="https://github.com/Cephei18" target="_blank" rel="noopener" aria-label="GitHub">
           <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
           </svg>
           <span class="mosaic-label">github</span>
+          <span class="mosaic-note">@Cephei18 · where it's messy</span>
         </a>
 
-        <a class="grid-link mosaic-tile tile-social tile-medium tile-left" href="https://www.linkedin.com/in/gopika-chauhan18/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="grid-link mosaic-tile tile-social tile-compact tile-left" href="https://x.com/okgopika" target="_blank" rel="noopener" aria-label="X / Twitter">
           <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
           </svg>
-          <span class="mosaic-label">linkedin</span>
+          <span class="mosaic-label">x / twitter</span>
+          <span class="mosaic-note">@okgopika · thinking out loud</span>
         </a>
 
         <a class="grid-link mosaic-tile tile-contact tile-wide tile-left" href="mailto:gopikachauhan1819@gmail.com" aria-label="Email Gopika">
           <i class="ti ti-mail"></i>
           <span class="mosaic-label">contact</span>
+          <span class="mosaic-note">inbox is open · replies are slow but real</span>
+        </a>
+
+        <a class="grid-link mosaic-tile tile-social tile-compact tile-left" href="https://www.linkedin.com/in/gopika-chauhan18/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+          </svg>
+          <span class="mosaic-label">linkedin</span>
+          <span class="mosaic-note">the formal mirror</span>
         </a>
 
         <a class="grid-link mosaic-tile tile-social tile-compact tile-center" href="https://www.instagram.com/okgopika/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -103,14 +134,18 @@
           <span class="mosaic-label">youtube</span>
         </a>
 
-        <a class="grid-link mosaic-tile tile-social tile-wide tile-left" href="https://portfolio-delta-three-qv9rd7uy9n.vercel.app/" target="_blank" rel="noopener" aria-label="Linktree">
+        <a class="grid-link mosaic-tile tile-social tile-compact tile-center" href="https://portfolio-delta-three-qv9rd7uy9n.vercel.app/" target="_blank" rel="noopener" aria-label="Linktree">
           <svg class="svg-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M7.953 15.066c-.08.163-.08.324-.08.486.08.517.528.897 1.052.897h.04a.98.98 0 00.526-.162l2.525-1.78 2.525 1.78c.162.08.324.162.527.162h.04c.527 0 .975-.38 1.054-.897 0-.162 0-.323-.082-.486l-1.984-3.562 2.485-1.738a1.07 1.07 0 00.243-1.457.982.982 0 00-.891-.4h-3.087L12.006 4.4c-.08-.243-.324-.4-.567-.4a.585.585 0 00-.568.4l-1.05 3.509H6.734a.98.98 0 00-.889.4 1.07 1.07 0 00.243 1.457l2.486 1.738-1.62 3.562zM12 22C6.476 22 2 17.523 2 12S6.476 2 12 2s10 4.477 10 10-4.476 10-10 10z" />
           </svg>
-          <span class="mosaic-label">linktree</span>
+          <span class="mosaic-label">everything else</span>
         </a>
       </div>
 
+      <footer class="node-footer">
+        <span>// last deploy <b data-build="2026-05-30">recently</b></span>
+        <span>okgopika.eth · node online</span>
+      </footer>
     </nav>
   </main>
   <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme"></button>

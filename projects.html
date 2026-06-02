@@ -4,94 +4,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My projects — okgopika</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <script defer src="./scripts/theme.js"></script>
+  <script defer src="./scripts/site.js"></script>
 </head>
 <body>
   <main class="page-shell">
     <header class="page-top">
-      <div class="page-kicker">// my projects</div>
-      <h1 class="page-title">Systems I’ve been building</h1>
-      <p class="page-subtitle">A quieter look at the work, experiments, and shipped ideas that keep showing up in my terminal.</p>
+      <div class="page-kicker">// build log</div>
+      <h1 class="page-title">Systems I've been building</h1>
+      <p class="page-subtitle">The work that keeps showing up in my terminal — intelligence infrastructure, social agents, DeFi tooling, and a few experiments that escaped the lab. Roughly newest first.</p>
       <div class="page-actions">
         <a class="page-chip" href="./index.html"><i class="ti ti-arrow-left"></i>home</a>
-        <span class="page-chip">shipping notes</span>
+        <span class="page-chip">6 selected</span>
+        <span class="page-chip">more on github</span>
       </div>
     </header>
 
     <section class="page-content">
       <article class="content-card">
-        <div class="content-meta">featured project 01</div>
-        <h2>Echo — Autonomous Ecosystem Intelligence Platform</h2>
-        <p>An AI-powered intelligence infrastructure platform built for the Base ecosystem to monitor governance, grants, ecosystem activity, and emerging opportunities in real time.</p>
-        <p>Designed and engineered a production-grade backend architecture using FastAPI, Redis, APScheduler, and Next.js with asynchronous polling pipelines and precomputed feed APIs for scalable data delivery. Integrated multiple ecosystem sources including Snapshot, Farcaster, Gitcoin, and x402 workflows while implementing deterministic signal scoring, cooldown memory systems, and AI-powered enrichment pipelines to surface high-impact ecosystem events intelligently.</p>
-        <p>Built with a strong focus on systems engineering, operational reliability, and real-time coordination infrastructure.</p>
+        <span class="proj-tag live">live</span>
+        <div class="content-meta">01 · intelligence infra</div>
+        <h2>Echo — Autonomous Ecosystem Intelligence</h2>
+        <p>An AI-powered intelligence layer for the Base ecosystem that watches governance, grants, and onchain activity in real time and surfaces what actually matters — before it's obvious.</p>
+        <p>The hard part was never the AI; it was the plumbing. Production-grade backend in FastAPI, Redis, and APScheduler with async polling pipelines and precomputed feed APIs that stay fast under load. It pulls from Snapshot, Farcaster, Gitcoin, and x402 workflows, then runs deterministic signal scoring, cooldown memory, and enrichment passes so the noise never reaches the feed.</p>
+        <p>Built as a study in operational reliability: a system that has to keep being right while nobody is watching.</p>
         <ul class="content-list">
-          <li><strong>Tech stack:</strong> FastAPI, Redis, APScheduler, Next.js, Gemini API, Railway, Vercel</li>
-          <li><strong>Live:</strong> <a class="page-link" href="https://base-navigator.vercel.app/" target="_blank" rel="noreferrer">base-navigator.vercel.app</a></li>
-          <li><strong>GitHub:</strong> <a class="page-link" href="https://github.com/Cephei18/base_navigator" target="_blank" rel="noreferrer">Cephei18/base_navigator</a></li>
+          <li><strong>stack:</strong> FastAPI · Redis · APScheduler · Next.js · Gemini · Railway · Vercel</li>
+          <li><strong>live:</strong> <a class="page-link" href="https://base-navigator.vercel.app/" target="_blank" rel="noopener noreferrer">base-navigator.vercel.app</a></li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/base_navigator" target="_blank" rel="noopener noreferrer">Cephei18/base_navigator</a></li>
         </ul>
       </article>
 
       <article class="content-card">
-        <div class="content-meta">featured project 02</div>
-        <h2>Alter Ego Agents — AI x Farcaster Social Coordination System</h2>
-        <p>An experimental AI-powered Farcaster-native platform that generates personality agents from user activity and simulates collaboration compatibility between individuals.</p>
-        <p>Built multi-agent interaction workflows capable of analyzing casts, extracting behavioral patterns, and generating compatibility insights using Gemini and Neynar APIs. Engineered real-time interaction systems with Redis-backed caching, Farcaster authentication, personality extraction pipelines, and collaboration risk analysis mechanisms.</p>
-        <p>The project explores how AI agents and social coordination systems can reshape online collaboration inside decentralized ecosystems.</p>
+        <span class="proj-tag">experiment</span>
+        <div class="content-meta">02 · ai × farcaster</div>
+        <h2>Alter Ego — Social Coordination Agents</h2>
+        <p>A Farcaster-native experiment that reads your casts, builds a personality agent from how you actually behave online, and then simulates whether two people would collaborate well — or quietly drive each other insane.</p>
+        <p>Under the hood: multi-agent workflows that analyze casts, extract behavioral patterns, and generate compatibility insights via Gemini and Neynar, wrapped in real-time interaction systems with Redis-backed caching, Farcaster auth, and a collaboration-risk model that's only half joking.</p>
+        <p>Really it's a question I keep circling — can AI make online coordination feel less random and more like it understands the people in it?</p>
         <ul class="content-list">
-          <li><strong>Tech stack:</strong> Next.js, TypeScript, Redis, Gemini API, Neynar API, Farcaster</li>
-          <li><strong>GitHub:</strong> <a class="page-link" href="https://github.com/Cephei18/AlterEgo" target="_blank" rel="noreferrer">Cephei18/AlterEgo</a></li>
+          <li><strong>stack:</strong> Next.js · TypeScript · Redis · Gemini · Neynar · Farcaster</li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/AlterEgo" target="_blank" rel="noopener noreferrer">Cephei18/AlterEgo</a></li>
         </ul>
       </article>
 
       <article class="content-card">
-        <div class="content-meta">featured project 03</div>
-        <h2>Smart Liquidity Position Manager — DeFi Analytics Infrastructure</h2>
-        <p>A concentrated liquidity analytics platform built around Uniswap V3 mechanics for analyzing LP positions and simulating liquidity deployment strategies.</p>
-        <p>Developed deterministic liquidity analysis utilities capable of fetching live Ethereum mainnet pool state, estimating liquidity requirements, simulating LP ranges, and performing tick-price conversion logic for WETH/USDC pools. Focused heavily on protocol-level understanding of concentrated liquidity systems and on-chain market mechanics.</p>
-        <p>Built as a deeper exploration into DeFi infrastructure engineering and protocol tooling.</p>
+        <span class="proj-tag">defi tooling</span>
+        <div class="content-meta">03 · protocol mechanics</div>
+        <h2>Smart Liquidity Position Manager</h2>
+        <p>Concentrated-liquidity analytics built on Uniswap V3 mechanics — for reasoning about LP positions and simulating deployment strategies before committing real capital to a range.</p>
+        <p>Deterministic utilities that fetch live Ethereum mainnet pool state, estimate liquidity requirements, simulate LP ranges, and handle the tick-to-price math for WETH/USDC. Less of a product, more of a way to force myself to understand concentrated liquidity at the level the protocol actually operates.</p>
+        <p>This is where I fell in love with reading contracts instead of docs.</p>
         <ul class="content-list">
-          <li><strong>Tech stack:</strong> TypeScript, Ethers.js, Uniswap SDK, Ethereum Mainnet</li>
-          <li><strong>GitHub:</strong> <a class="page-link" href="https://github.com/Cephei18/Smart-Liquidity-Position-Manager" target="_blank" rel="noreferrer">Cephei18/Smart-Liquidity-Position-Manager</a></li>
+          <li><strong>stack:</strong> TypeScript · Ethers.js · Uniswap SDK · Ethereum mainnet</li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/Smart-Liquidity-Position-Manager" target="_blank" rel="noopener noreferrer">Cephei18/Smart-Liquidity-Position-Manager</a></li>
         </ul>
       </article>
 
       <article class="content-card">
-        <div class="content-meta">featured project 04</div>
-        <h2>DoItOrNot — Farcaster Mini App</h2>
-        <p>A Farcaster Mini App where users ask a question and get a chaotic, personality-driven decision.</p>
-        <p>The production app combines a question input flow, agent selector, suspenseful decision reveal, and optional battle mode that compares results across multiple agents. The interface uses animated theme effects tuned for social sharing while keeping the core interaction simple and fast.</p>
-        <p>Technical work includes reusable decision and chaos engines, notification and webhook API routes, and OG image generation for shareable outputs.</p>
+        <span class="proj-tag live">live</span>
+        <div class="content-meta">04 · farcaster mini app</div>
+        <h2>DoItOrNot</h2>
+        <p>You ask it a question. It gives you a chaotic, personality-driven verdict you didn't ask for. The internet's worst-best decision-maker, shipped as a Farcaster Mini App.</p>
+        <p>Question flow, agent selector, a deliberately suspenseful reveal, and a battle mode that pits agents against each other. The fun is on the surface; underneath are reusable decision and chaos engines, notification and webhook routes, and OG image generation so every verdict is shareable.</p>
+        <p>Proof that "serious systems work" and "this made me laugh" aren't mutually exclusive.</p>
         <ul class="content-list">
-          <li><strong>Tech stack:</strong> Next.js 14 App Router, TypeScript, React, Framer Motion</li>
-          <li><strong>Live:</strong> <a class="page-link" href="https://doitornot-jdcy.vercel.app/" target="_blank" rel="noreferrer">doitornot-jdcy.vercel.app</a></li>
-          <li><strong>GitHub:</strong> <a class="page-link" href="https://github.com/Cephei18/doitornot" target="_blank" rel="noreferrer">Cephei18/doitornot</a></li>
+          <li><strong>stack:</strong> Next.js 14 (App Router) · TypeScript · React · Framer Motion</li>
+          <li><strong>live:</strong> <a class="page-link" href="https://doitornot-jdcy.vercel.app/" target="_blank" rel="noopener noreferrer">doitornot-jdcy.vercel.app</a></li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/doitornot" target="_blank" rel="noopener noreferrer">Cephei18/doitornot</a></li>
         </ul>
       </article>
 
       <article class="content-card">
-        <div class="content-meta">featured project 05</div>
-        <h2>Semantic Dependency Graph for Autonomous Tool Planning</h2>
-        <p>A typed semantic execution graph and dependency planner for autonomous AI agents using Composio GoogleSuper and GitHub toolkits.</p>
-        <p>Instead of directly chaining APIs together, the system models tools through canonical semantic entities such as EMAIL_THREAD_ID, EMAIL_ADDRESS, GITHUB_REPOSITORY, and PULL_REQUEST_NUMBER. That abstraction enables multi-hop dependency resolution, autonomous execution planning, semantic tool orchestration, recoverable missing-state reasoning, and explainable execution traces.</p>
-        <p>The project explores semantic dependency modeling as infrastructure for autonomous tool-using agents.</p>
+        <span class="proj-tag">research</span>
+        <div class="content-meta">05 · agent infrastructure</div>
+        <h2>Semantic Dependency Graph for Tool Planning</h2>
+        <p>A typed execution graph and dependency planner for autonomous agents — built on the bet that agents shouldn't chain APIs blindly, they should reason about what each tool actually produces.</p>
+        <p>Instead of wiring calls end to end, the system models tools through canonical semantic entities — EMAIL_THREAD_ID, EMAIL_ADDRESS, GITHUB_REPOSITORY, PULL_REQUEST_NUMBER. That one abstraction unlocks multi-hop dependency resolution, autonomous planning, recoverable missing-state reasoning, and execution traces you can actually explain afterward.</p>
+        <p>An attempt at the unsexy foundation autonomous agents will need before they're trustworthy.</p>
         <ul class="content-list">
-          <li><strong>Core idea:</strong> tools produce semantic entities that become requirements for downstream tools</li>
-          <li><strong>GitHub:</strong> <a class="page-link" href="https://github.com/Cephei18/dep-graph" target="_blank" rel="noreferrer">Cephei18/dep-graph</a></li>
+          <li><strong>core idea:</strong> tools emit semantic entities; those entities become the prerequisites for downstream tools</li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/dep-graph" target="_blank" rel="noopener noreferrer">Cephei18/dep-graph</a></li>
         </ul>
       </article>
 
       <article class="content-card">
-        <div class="content-meta">featured project 06</div>
-        <h2>Decentralized Crowd Funding</h2>
-        <p>A monorepo for an Ethereum crowdfunding dApp using a Solidity smart contract and a React frontend.</p>
-        <p>The application supports wallet connection, on-chain funding via payable transaction, contract balance withdrawal by owner only, and a read path for cumulative funded amount. The repository pairs a Hardhat-backed Solidity contract with a Vite + React frontend, keeping the stack compact and practical.</p>
-        <p>Contract design focuses on a simple but complete lifecycle: fund, track lifetime contributions, and withdraw safely with owner-only access control.</p>
+        <span class="proj-tag">onchain</span>
+        <div class="content-meta">06 · solidity · the fundamentals</div>
+        <h2>Decentralized Crowdfunding</h2>
+        <p>A compact Ethereum crowdfunding dApp — Solidity contract, React frontend, no bloat. The kind of project you build to make sure you actually understand the full loop, contract to UI.</p>
+        <p>Wallet connection, onchain funding via payable transactions, owner-only withdrawal, and a read path for lifetime contributions. A Hardhat-backed contract paired with a Vite + React frontend, kept deliberately small so every line earns its place.</p>
+        <p>Contract design favors a complete, safe lifecycle over cleverness: fund, track, withdraw, with owner-only access control.</p>
         <ul class="content-list">
-          <li><strong>Tech stack:</strong> Hardhat, Ethers, Solidity 0.8.24, Vite, React, ethers v6, npm workspaces</li>
-          <li><strong>GitHub:</strong> <a class="page-link" href="https://github.com/Cephei18/funding" target="_blank" rel="noreferrer">Cephei18/funding</a></li>
+          <li><strong>stack:</strong> Solidity 0.8.24 · Hardhat · ethers v6 · Vite · React · npm workspaces</li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/funding" target="_blank" rel="noopener noreferrer">Cephei18/funding</a></li>
         </ul>
       </article>
     </section>
