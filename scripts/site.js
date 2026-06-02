@@ -40,14 +40,14 @@
   const rotator = document.querySelector('[data-rotate]');
   if (rotator && !reduceMotion) {
     const fragments = [
-      'uniswap v4 hooks',
-      'farcaster-native agents',
-      'coordination systems',
-      'deterministic scoring',
-      'async data pipelines',
-      'why the internet coordinates',
-      'dynamic fee models',
+      'crypto-native agents',
+      'agents that act onchain',
       'semantic tool planning',
+      'farcaster-native AI',
+      'uniswap v4 hooks',
+      'autonomous ecosystem intel',
+      'what agents can be trusted to do',
+      'coordination, automated',
     ];
     let i = 0;
     setInterval(() => {
@@ -73,8 +73,8 @@
   }
 
   // — a note for whoever opens the console —
-  const tag = 'color:#8b6dff;font-family:monospace;font-size:12px';
-  const dim = 'color:#6f76a0;font-family:monospace;font-size:11px';
+  const tag = 'color:#4f9cf9;font-family:monospace;font-size:12px';
+  const dim = 'color:#6c789e;font-family:monospace;font-size:11px';
   console.log('%c// you opened the console. of course you did.', tag);
   console.log('%cif you build weird things too, say hi → farcaster.xyz/okgopika', dim);
 })();
