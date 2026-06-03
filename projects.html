@@ -20,7 +20,7 @@
       <p class="page-subtitle">The work that keeps showing up in my terminal — intelligence infrastructure, social agents, DeFi tooling, and a few experiments that escaped the lab. Roughly newest first.</p>
       <div class="page-actions">
         <a class="page-chip" href="./index.html"><i class="ti ti-arrow-left"></i>home</a>
-        <span class="page-chip">6 selected</span>
+        <span class="page-chip">7 selected</span>
         <span class="page-chip">more on github</span>
       </div>
     </header>
@@ -54,8 +54,23 @@
       </article>
 
       <article class="content-card">
+        <span class="proj-tag live">live</span>
+        <div class="content-meta">03 · applied ai · the day job</div>
+        <h2>Form Parser — Document Understanding @ MSB Docs</h2>
+        <p>SWE Intern at MSB Docs (Feb–Jul 2026), where I shipped an AI document-understanding pipeline that turns scanned forms and PDFs into interactive, fillable documents — OCR, structural reasoning, and automated field reconstruction, hitting ~85% field recall on messy multi-layout forms.</p>
+        <p>The hard part was never the OCR; it was the reasoning layered on top of it. I built a multi-stage layout engine — row grouping, ownership propagation, confidence-aware mapping, and table-aware field detection — so the system can make sense of multi-page, semi-structured documents that refuse to follow any single template.</p>
+        <p>It runs on a production backend (FastAPI, Docker, AWS EC2 + S3), and I led migration planning toward a serverless Textract + Lambda architecture — killing the CPU-heavy OCR bottleneck, sharpening checkbox and table extraction, and cutting infra cost along the way.</p>
+        <p>Not crypto — but it's the exact instinct behind the onchain work: take something chaotic and unstructured, and turn it into data a machine can actually act on.</p>
+        <ul class="content-list">
+          <li><strong>stack:</strong> Python · FastAPI · AWS Textract · Computer Vision · Next.js · Docker · EC2 · S3</li>
+          <li><strong>live:</strong> <a class="page-link" href="http://form-pdf-poc-dev-frontend.s3-website.ap-south-1.amazonaws.com/" target="_blank" rel="noopener noreferrer">form-pdf-poc-dev demo</a></li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/form_parser" target="_blank" rel="noopener noreferrer">Cephei18/form_parser</a></li>
+        </ul>
+      </article>
+
+      <article class="content-card">
         <span class="proj-tag">defi tooling</span>
-        <div class="content-meta">03 · protocol mechanics</div>
+        <div class="content-meta">04 · protocol mechanics</div>
         <h2>Smart Liquidity Position Manager</h2>
         <p>Concentrated-liquidity analytics built on Uniswap V3 mechanics — for reasoning about LP positions and simulating deployment strategies before committing real capital to a range.</p>
         <p>Deterministic utilities that fetch live Ethereum mainnet pool state, estimate liquidity requirements, simulate LP ranges, and handle the tick-to-price math for WETH/USDC. Less of a product, more of a way to force myself to understand concentrated liquidity at the level the protocol actually operates.</p>
@@ -68,7 +83,7 @@
 
       <article class="content-card">
         <span class="proj-tag live">live</span>
-        <div class="content-meta">04 · farcaster mini app</div>
+        <div class="content-meta">05 · farcaster mini app</div>
         <h2>DoItOrNot</h2>
         <p>You ask it a question. It gives you a chaotic, personality-driven verdict you didn't ask for. The internet's worst-best decision-maker, shipped as a Farcaster Mini App.</p>
         <p>Question flow, agent selector, a deliberately suspenseful reveal, and a battle mode that pits agents against each other. The fun is on the surface; underneath are reusable decision and chaos engines, notification and webhook routes, and OG image generation so every verdict is shareable.</p>
@@ -82,7 +97,7 @@
 
       <article class="content-card">
         <span class="proj-tag">research</span>
-        <div class="content-meta">05 · agent infrastructure</div>
+        <div class="content-meta">06 · agent infrastructure</div>
         <h2>Semantic Dependency Graph for Tool Planning</h2>
         <p>A typed execution graph and dependency planner for autonomous agents — built on the bet that agents shouldn't chain APIs blindly, they should reason about what each tool actually produces.</p>
         <p>Instead of wiring calls end to end, the system models tools through canonical semantic entities — EMAIL_THREAD_ID, EMAIL_ADDRESS, GITHUB_REPOSITORY, PULL_REQUEST_NUMBER. That one abstraction unlocks multi-hop dependency resolution, autonomous planning, recoverable missing-state reasoning, and execution traces you can actually explain afterward.</p>
@@ -95,7 +110,7 @@
 
       <article class="content-card">
         <span class="proj-tag">onchain</span>
-        <div class="content-meta">06 · solidity · the fundamentals</div>
+        <div class="content-meta">07 · solidity · the fundamentals</div>
         <h2>Decentralized Crowdfunding</h2>
         <p>A compact Ethereum crowdfunding dApp — Solidity contract, React frontend, no bloat. The kind of project you build to make sure you actually understand the full loop, contract to UI.</p>
         <p>Wallet connection, onchain funding via payable transactions, owner-only withdrawal, and a read path for lifetime contributions. A Hardhat-backed contract paired with a Vite + React frontend, kept deliberately small so every line earns its place.</p>
