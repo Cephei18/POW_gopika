@@ -841,6 +841,27 @@ body[data-theme="dark"] .banner-image {
   border-color: color-mix(in srgb, var(--status) 35%, transparent);
 }
 
+/* award strip below a project heading */
+.proj-award {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  color: var(--secondary);
+  background: var(--surface-soft);
+  border: 1px solid var(--border-soft);
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin: 2px 0 12px;
+}
+
+.proj-award i {
+  color: var(--status);
+  font-size: 13px;
+}
+
 .proj-tag.live::before {
   content: "";
   display: inline-block;

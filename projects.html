@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My projects — okgopika</title>
+  <title>My projects · okgopika</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
@@ -17,36 +17,65 @@
     <header class="page-top">
       <div class="page-kicker">// build log</div>
       <h1 class="page-title">Systems I've been building</h1>
-      <p class="page-subtitle">The work that keeps showing up in my terminal — intelligence infrastructure, social agents, DeFi tooling, and a few experiments that escaped the lab. Roughly newest first.</p>
+      <p class="page-subtitle">The work that keeps showing up in my terminal: intelligence infrastructure, social agents, DeFi tooling, and a few experiments that escaped the lab. Roughly newest first.</p>
       <div class="page-actions">
         <a class="page-chip" href="./index.html"><i class="ti ti-arrow-left"></i>home</a>
-        <span class="page-chip">7 selected</span>
+        <span class="page-chip">9 selected</span>
         <span class="page-chip">more on github</span>
       </div>
     </header>
 
     <section class="page-content">
       <article class="content-card">
+        <span class="proj-tag">x402 · agents</span>
+        <div class="content-meta">01 · the operating system for AI companies</div>
+        <h2>Sentinel: Govern a Workforce of AI Workers</h2>
+        <div class="proj-award"><i class="ti ti-trophy"></i>2nd prize · Base × Privy hackathon</div>
+        <p>The next company won't be only humans and contractors. Founders will run a whole workforce of AI workers that spend money, buy APIs, and even hire each other. With x402 and stablecoins, that part already works. The piece nobody had really solved is the boring-but-critical one: how do you manage, trust, and budget a team of agents you can't actually see? Sentinel is my answer. Think Stripe, Rippling, and GitHub, but for AI agents.</p>
+        <p>You hire a worker and hand it real but scoped authority: a budget, a per-transaction ceiling, an expiry, allowed categories. Not a blank cheque. Every payment gets checked against that scope before any money moves, so anything over-limit, off-category, or expired just gets blocked and logged, and it quietly dents that worker's reputation. All of that behaviour rolls up into a trust score you can actually read: payment reliability, spending discipline, task completion, consistency. It's recomputed from the worker's event log every time, never stored as some number you have to take on faith.</p>
+        <p>Trust isn't decoration here. It decides how much rope a worker gets, moving it from Supervised to Trusted to Autonomous, and it shapes how much budget I'd recommend handing over next. My favourite part for a live demo: the whole founder flow runs on seeded local state with no wallet and no internet, and real USDC settlement on Base switches on the moment you fund a wallet. It never dead-ends on stage.</p>
+        <ul class="content-list">
+          <li><strong>stack:</strong> Next.js 16 · React 19 · TypeScript · Tailwind v4 · Privy · x402 · Base · USDC · Vercel AI SDK · wagmi/viem</li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/Sentinel" target="_blank" rel="noopener noreferrer">Cephei18/Sentinel</a></li>
+        </ul>
+      </article>
+
+      <article class="content-card">
         <span class="proj-tag live">live</span>
-        <div class="content-meta">01 · intelligence infra</div>
-        <h2>Echo — Autonomous Ecosystem Intelligence</h2>
-        <p>An AI-powered intelligence layer for the Base ecosystem that watches governance, grants, and onchain activity in real time and surfaces what actually matters — before it's obvious.</p>
+        <div class="content-meta">02 · intelligence infra</div>
+        <h2>Echo: Autonomous Ecosystem Intelligence</h2>
+        <p>An AI-powered intelligence layer for the Base ecosystem. It watches governance, grants, and onchain activity in real time and surfaces what actually matters, usually before it's obvious to everyone else.</p>
         <p>The hard part was never the AI; it was the plumbing. Production-grade backend in FastAPI, Redis, and APScheduler with async polling pipelines and precomputed feed APIs that stay fast under load. It pulls from Snapshot, Farcaster, Gitcoin, and x402 workflows, then runs deterministic signal scoring, cooldown memory, and enrichment passes so the noise never reaches the feed.</p>
         <p>Built as a study in operational reliability: a system that has to keep being right while nobody is watching.</p>
         <ul class="content-list">
           <li><strong>stack:</strong> FastAPI · Redis · APScheduler · Next.js · Gemini · Railway · Vercel</li>
           <li><strong>live:</strong> <a class="page-link" href="https://base-navigator.vercel.app/" target="_blank" rel="noopener noreferrer">base-navigator.vercel.app</a></li>
-          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/base_navigator" target="_blank" rel="noopener noreferrer">Cephei18/base_navigator</a></li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/Echo" target="_blank" rel="noopener noreferrer">Cephei18/Echo</a></li>
+        </ul>
+      </article>
+
+      <article class="content-card">
+        <span class="proj-tag live">live</span>
+        <div class="content-meta">03 · credential infra for agents</div>
+        <h2>Credence: Agent Passport</h2>
+        <div class="proj-award"><i class="ti ti-code"></i>built at ETHGlobal New York</div>
+        <p>Humans earn authority over time through passports, licenses, certifications, and credit scores. Autonomous agents have wallets, prompts, and tools, but no concept of authority they've actually earned. Credence is that missing primitive. An agent starts with almost no rights, and the human or org behind it earns a wider, enforceable delegation envelope only as the agent racks up independently verified behavior.</p>
+        <p>It flips the usual model on its head. Instead of "create the agent and hand it full authority," you create it with minimal rights, and trust is earned through verified outcomes rather than self-reported ones. Permissions aren't static either: rights expand as an agent performs and decay if it misbehaves. The identity isn't just a wallet key, it's a soulbound, revocable ENS passport that an agent only receives once it's eligible.</p>
+        <p>The interesting part was making it survive the attacks that kill naive reputation systems. Rights are anchored to a staked principal rather than the free-to-spawn agent (Sybil), outcomes are resolved only by an independent verifier via Chainlink Functions rather than self-reported, credentials are soulbound so reputation can't be sold, and everything is enforced at an on-chain chokepoint instead of stored as advisory metadata. The flagship use case is a trust framework for autonomous treasury agents that have to walk a verifiable Research to Risk to Treasury pathway before they're allowed anywhere near real funds.</p>
+        <ul class="content-list">
+          <li><strong>stack:</strong> Solidity · Hardhat · Chainlink Functions · ENS · Next.js · Privy · wagmi</li>
+          <li><strong>live:</strong> <a class="page-link" href="https://credence-web.vercel.app/" target="_blank" rel="noopener noreferrer">credence-web.vercel.app</a></li>
+          <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/Credence" target="_blank" rel="noopener noreferrer">Cephei18/Credence</a></li>
         </ul>
       </article>
 
       <article class="content-card">
         <span class="proj-tag">experiment</span>
-        <div class="content-meta">02 · ai × farcaster</div>
-        <h2>Alter Ego — Social Coordination Agents</h2>
-        <p>A Farcaster-native experiment that reads your casts, builds a personality agent from how you actually behave online, and then simulates whether two people would collaborate well — or quietly drive each other insane.</p>
-        <p>Under the hood: multi-agent workflows that analyze casts, extract behavioral patterns, and generate compatibility insights via Gemini and Neynar, wrapped in real-time interaction systems with Redis-backed caching, Farcaster auth, and a collaboration-risk model that's only half joking.</p>
-        <p>Really it's a question I keep circling — can AI make online coordination feel less random and more like it understands the people in it?</p>
+        <div class="content-meta">04 · ai × farcaster</div>
+        <h2>Alter Ego: Social Coordination Agents</h2>
+        <p>A Farcaster-native experiment that reads your casts, builds a personality agent from how you actually behave online, and then simulates whether two people would collaborate well or quietly drive each other insane.</p>
+        <p>Under the hood it's multi-agent workflows that analyze casts, pull out behavioral patterns, and generate compatibility insights through Gemini and Neynar. All of it sits on top of real-time interaction systems with Redis-backed caching, Farcaster auth, and a collaboration-risk model that's only half joking.</p>
+        <p>Really it's a question I keep circling back to: can AI make online coordination feel less random, and a little more like it understands the people in it?</p>
         <ul class="content-list">
           <li><strong>stack:</strong> Next.js · TypeScript · Redis · Gemini · Neynar · Farcaster</li>
           <li><strong>code:</strong> <a class="page-link" href="https://github.com/Cephei18/AlterEgo" target="_blank" rel="noopener noreferrer">Cephei18/AlterEgo</a></li>
@@ -55,12 +84,12 @@
 
       <article class="content-card">
         <span class="proj-tag live">live</span>
-        <div class="content-meta">03 · applied ai · the day job</div>
-        <h2>Form Parser — Document Understanding @ MSB Docs</h2>
-        <p>SWE Intern at MSB Docs (Feb–Jul 2026), where I shipped an AI document-understanding pipeline that turns scanned forms and PDFs into interactive, fillable documents — OCR, structural reasoning, and automated field reconstruction, hitting ~85% field recall on messy multi-layout forms.</p>
-        <p>The hard part was never the OCR; it was the reasoning layered on top of it. I built a multi-stage layout engine — row grouping, ownership propagation, confidence-aware mapping, and table-aware field detection — so the system can make sense of multi-page, semi-structured documents that refuse to follow any single template.</p>
-        <p>It runs on a production backend (FastAPI, Docker, AWS EC2 + S3), and I led migration planning toward a serverless Textract + Lambda architecture — killing the CPU-heavy OCR bottleneck, sharpening checkbox and table extraction, and cutting infra cost along the way.</p>
-        <p>Not crypto — but it's the exact instinct behind the onchain work: take something chaotic and unstructured, and turn it into data a machine can actually act on.</p>
+        <div class="content-meta">05 · applied ai · the day job</div>
+        <h2>Form Parser: Document Understanding @ MSB Docs</h2>
+        <p>SWE Intern at MSB Docs (Feb to Jul 2026), where I shipped an AI document-understanding pipeline that turns scanned forms and PDFs into interactive, fillable documents. OCR, structural reasoning, and automated field reconstruction, hitting roughly 85% field recall on messy multi-layout forms.</p>
+        <p>The hard part was never the OCR. It was the reasoning layered on top of it. I built a multi-stage layout engine (row grouping, ownership propagation, confidence-aware mapping, table-aware field detection) so the system can make sense of multi-page, semi-structured documents that refuse to follow any single template.</p>
+        <p>It runs on a production backend (FastAPI, Docker, AWS EC2 + S3), and I led migration planning toward a serverless Textract and Lambda setup. That killed the CPU-heavy OCR bottleneck, sharpened checkbox and table extraction, and cut infra cost along the way.</p>
+        <p>Not crypto, but it's the exact instinct behind the onchain work: take something chaotic and unstructured, and turn it into data a machine can actually act on.</p>
         <ul class="content-list">
           <li><strong>stack:</strong> Python · FastAPI · AWS Textract · Computer Vision · Next.js · Docker · EC2 · S3</li>
           <li><strong>live:</strong> <a class="page-link" href="http://form-pdf-poc-dev-frontend.s3-website.ap-south-1.amazonaws.com/" target="_blank" rel="noopener noreferrer">form-pdf-poc-dev demo</a></li>
@@ -70,9 +99,9 @@
 
       <article class="content-card">
         <span class="proj-tag">defi tooling</span>
-        <div class="content-meta">04 · protocol mechanics</div>
+        <div class="content-meta">06 · protocol mechanics</div>
         <h2>Smart Liquidity Position Manager</h2>
-        <p>Concentrated-liquidity analytics built on Uniswap V3 mechanics — for reasoning about LP positions and simulating deployment strategies before committing real capital to a range.</p>
+        <p>Concentrated-liquidity analytics built on Uniswap V3 mechanics, for reasoning about LP positions and simulating deployment strategies before committing real capital to a range.</p>
         <p>Deterministic utilities that fetch live Ethereum mainnet pool state, estimate liquidity requirements, simulate LP ranges, and handle the tick-to-price math for WETH/USDC. Less of a product, more of a way to force myself to understand concentrated liquidity at the level the protocol actually operates.</p>
         <p>This is where I fell in love with reading contracts instead of docs.</p>
         <ul class="content-list">
@@ -83,7 +112,7 @@
 
       <article class="content-card">
         <span class="proj-tag live">live</span>
-        <div class="content-meta">05 · farcaster mini app</div>
+        <div class="content-meta">07 · farcaster mini app</div>
         <h2>DoItOrNot</h2>
         <p>You ask it a question. It gives you a chaotic, personality-driven verdict you didn't ask for. The internet's worst-best decision-maker, shipped as a Farcaster Mini App.</p>
         <p>Question flow, agent selector, a deliberately suspenseful reveal, and a battle mode that pits agents against each other. The fun is on the surface; underneath are reusable decision and chaos engines, notification and webhook routes, and OG image generation so every verdict is shareable.</p>
@@ -97,10 +126,10 @@
 
       <article class="content-card">
         <span class="proj-tag">research</span>
-        <div class="content-meta">06 · agent infrastructure</div>
+        <div class="content-meta">08 · agent infrastructure</div>
         <h2>Semantic Dependency Graph for Tool Planning</h2>
-        <p>A typed execution graph and dependency planner for autonomous agents — built on the bet that agents shouldn't chain APIs blindly, they should reason about what each tool actually produces.</p>
-        <p>Instead of wiring calls end to end, the system models tools through canonical semantic entities — EMAIL_THREAD_ID, EMAIL_ADDRESS, GITHUB_REPOSITORY, PULL_REQUEST_NUMBER. That one abstraction unlocks multi-hop dependency resolution, autonomous planning, recoverable missing-state reasoning, and execution traces you can actually explain afterward.</p>
+        <p>A typed execution graph and dependency planner for autonomous agents, built on the bet that agents shouldn't chain APIs blindly. They should reason about what each tool actually produces.</p>
+        <p>Instead of wiring calls end to end, the system models tools through canonical semantic entities like EMAIL_THREAD_ID, EMAIL_ADDRESS, GITHUB_REPOSITORY, and PULL_REQUEST_NUMBER. That one abstraction unlocks multi-hop dependency resolution, autonomous planning, recoverable missing-state reasoning, and execution traces you can actually explain afterward.</p>
         <p>An attempt at the unsexy foundation autonomous agents will need before they're trustworthy.</p>
         <ul class="content-list">
           <li><strong>core idea:</strong> tools emit semantic entities; those entities become the prerequisites for downstream tools</li>
@@ -110,9 +139,9 @@
 
       <article class="content-card">
         <span class="proj-tag">onchain</span>
-        <div class="content-meta">07 · solidity · the fundamentals</div>
+        <div class="content-meta">09 · solidity · the fundamentals</div>
         <h2>Decentralized Crowdfunding</h2>
-        <p>A compact Ethereum crowdfunding dApp — Solidity contract, React frontend, no bloat. The kind of project you build to make sure you actually understand the full loop, contract to UI.</p>
+        <p>A compact Ethereum crowdfunding dApp: Solidity contract, React frontend, no bloat. The kind of project you build to make sure you actually understand the full loop, contract to UI.</p>
         <p>Wallet connection, onchain funding via payable transactions, owner-only withdrawal, and a read path for lifetime contributions. A Hardhat-backed contract paired with a Vite + React frontend, kept deliberately small so every line earns its place.</p>
         <p>Contract design favors a complete, safe lifecycle over cleverness: fund, track, withdraw, with owner-only access control.</p>
         <ul class="content-list">
